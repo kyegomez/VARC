@@ -2,7 +2,8 @@
 
 ![Architecture](/architecture.png)
 
-**An open-source community implementation of "ARC Is a Vision Problem!"**
+This is a clean, open-source, single-file implementation of the model architecture from the ["ARC Is a Vision Problem"](https://arxiv.org/abs/2511.14761) paper. It fully features the paper's Canvas mechanism and a fast transformer with grouped-query attention + RMSNorm.
+
 
 [![Discord](https://img.shields.io/badge/Discord-Join%20Community-5865F2?logo=discord&logoColor=white)](https://discord.gg/EamjgSaEQf)
 [![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?logo=pytorch&logoColor=white)](https://pytorch.org/)
@@ -10,19 +11,6 @@
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![arXiv](https://img.shields.io/badge/arXiv-2511.14761-b31b1b.svg)](https://arxiv.org/abs/2511.14761)
 
-## Paper
-
-**ARC Is a Vision Problem!**  
-Keya Hu, Ali Cy, Linlu Qiu, Xiaoman Delores Ding, Runqian Wang, Yeyin Eva Zhu, Jacob Andreas, Kaiming He
-
-**arXiv:** [2511.14761](https://arxiv.org/abs/2511.14761) [cs.CV]  
-**DOI:** [10.48550/arXiv.2511.14761](https://doi.org/10.48550/arXiv.2511.14761)
-
-## Abstract
-
-The Abstraction and Reasoning Corpus (ARC) is designed to promote research on abstract reasoning, a fundamental aspect of human intelligence. Common approaches to ARC treat it as a language-oriented problem, addressed by large language models (LLMs) or recurrent reasoning models. However, although the puzzle-like tasks in ARC are inherently visual, existing research has rarely approached the problem from a vision-centric perspective. 
-
-In this work, we formulate ARC within a vision paradigm, framing it as an image-to-image translation problem. To incorporate visual priors, we represent the inputs on a "canvas" that can be processed like natural images. It is then natural for us to apply standard vision architectures, such as a vanilla Vision Transformer (ViT), to perform image-to-image mapping. Our model is trained from scratch solely on ARC data and generalizes to unseen tasks through test-time training. Our framework, termed Vision ARC (VARC), achieves **60.4% accuracy** on the ARC-1 benchmark, substantially outperforming existing methods that are also trained from scratch. Our results are competitive with those of leading LLMs and close the gap to average human performance.
 
 ## Key Contributions
 
