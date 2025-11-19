@@ -1,8 +1,9 @@
+import random
+from typing import List, Optional, Tuple
+
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-from typing import Optional, Tuple, List
-import random
 
 
 class Canvas:
