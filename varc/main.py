@@ -185,50 +185,7 @@ class SeparablePositionalEmbedding2D(nn.Module):
         return pos_embed
 
 
-class RMSNorm(nn.Module):
-    """
-    Root Mean Square Layer Normalization (RMSNorm).
-    
-    RMSNorm is a simplified version of LayerNorm that normalizes by the root mean square
-    of the inputs without centering (no mean subtraction). This makes it computationally
-    more efficient while often achieving similar or better performance.
-    
-    The normalization is computed as:
-        output = (input / RMS(input)) * weight
-    where RMS(input) = sqrt(mean(input^2))
-    
-    Attributes:
-        d_model (int): Model dimension.
-        eps (float): Small epsilon value for numerical stability.
-        weight (nn.Parameter): Learnable scaling parameter.
-    
-    Example:
-        >>> norm = RMSNorm(d_model=512)
-        >>> x = torch.randn(2, 100, 512)
-        >>> out = norm(x)  # Shape: (2, 100, 512)
-    """
-    
-    def __init__(self, d_model: int, eps: float = 1e-6):
-        super().__init__()
-        self.d_model = d_model
-        self.eps = eps
-        self.weight = nn.Parameter(torch.ones(d_model))
-    
-    def forward(self, x: torch.Tensor) -> torch.Tensor:
-        """
-        Apply RMS normalization.
-        
-        Args:
-            x: Input tensor of shape (..., d_model).
-        
-        Returns:
-            Normalized tensor of the same shape.
-        """
-        # Compute RMS
-        rms = torch.sqrt(torch.mean(x ** 2, dim=-1, keepdim=True) + self.eps)
-        
-        # Normalize and scale
-        return (x / rms) * self.weight
+
 
 
 class GroupedQueryAttention(nn.Module):
@@ -375,14 +332,14 @@ class TransformerBlock(nn.Module):
         dropout: float = 0.1,
     ):
         super().__init__()
-        self.norm1 = RMSNorm(d_model)
+        self.norm1 = nn.RMSNorm(d_model)
         self.attn = GroupedQueryAttention(
             d_model=d_model,
             n_query_heads=n_query_heads,
             n_kv_heads=n_kv_heads,
             dropout=dropout,
         )
-        self.norm2 = RMSNorm(d_model)
+        self.norm2 = nn.RMSNorm(d_model)
 
         self.mlp = nn.Sequential(
             nn.Linear(d_model, mlp_dim),
