@@ -10,11 +10,11 @@ from varc.main import (
 
 
 __all__ = [
-    'Canvas',
-    'SeparablePositionalEmbedding2D',
-    'GroupedQueryAttention',
-    'TransformerBlock',
-    'VisionARCModel',
-    'ARCDataAugmentation',
-    'ARCLoss',
+    "Canvas",
+    "SeparablePositionalEmbedding2D",
+    "GroupedQueryAttention",
+    "TransformerBlock",
+    "VisionARCModel",
+    "ARCDataAugmentation",
+    "ARCLoss",
 ]

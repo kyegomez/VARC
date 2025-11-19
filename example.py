@@ -11,7 +11,7 @@ if __name__ == "__main__":
         d_model=512,
         n_layers=10,
         n_query_heads=8,  # Number of query heads
-        n_kv_heads=2,      # Number of key-value heads (shared across query groups)
+        n_kv_heads=2,  # Number of key-value heads (shared across query groups)
         mlp_dim=512,
         dropout=0.1,
         num_tasks=400,
