@@ -3,14 +3,15 @@ from varc.main import VisionARCModel, ARCLoss
 
 # Example usage
 if __name__ == "__main__":
-    # Initialize model
+    # Initialize model with grouped query attention
     model = VisionARCModel(
         num_colors=10,
         canvas_size=64,
         patch_size=2,
         d_model=512,
         n_layers=10,
-        n_heads=8,
+        n_query_heads=8,  # Number of query heads
+        n_kv_heads=2,      # Number of key-value heads (shared across query groups)
         mlp_dim=512,
         dropout=0.1,
         num_tasks=400,
