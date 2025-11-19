@@ -78,6 +78,10 @@ if __name__ == "__main__":
 
 See `example.py` for a complete usage example.
 
+## Documentation
+
+For comprehensive API reference documentation, see [VisionARCModel Reference](VisionARCModel_reference.md).
+
 ## Architecture
 
 The VARC framework consists of several key components:
