@@ -1,4 +1,20 @@
-from varc.main import Canvas, VisionARCModel, ARCLoss
+from varc.main import (
+    Canvas,
+    SeparablePositionalEmbedding2D,
+    GroupedQueryAttention,
+    TransformerBlock,
+    VisionARCModel,
+    ARCDataAugmentation,
+    ARCLoss,
+)
 
 
-__all__ = ['Canvas', 'VisionARCModel', 'ARCLoss']
+__all__ = [
+    'Canvas',
+    'SeparablePositionalEmbedding2D',
+    'GroupedQueryAttention',
+    'TransformerBlock',
+    'VisionARCModel',
+    'ARCDataAugmentation',
+    'ARCLoss',
+]
